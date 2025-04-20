@@ -6,11 +6,13 @@ dotenv.config({
     path: "./.env"
 })
 
+const app = express()
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(`${__dirname}/${public}`))
+app.use(express.static(`${__dirname}/${'public'}`))
 
-const app = express()
+
 
 app.listen(process.env.PORT, () => {
     console.log(`App is listen to port ${process.env.PORT}`)
